@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Chaicode Player Boost",
+  "version": "1.8.10",
+  "description": "Choose normal or custom Chaicode player controls, unlock seeking, native quality/fullscreen delegation, shortcuts, and hidden watermarks.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Chaicode Player Boost",
+    "default_icon": {
+      "128": "icon-128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://courses.chaicode.com/*",
+        "https://*.chaicode.com/*",
+        "https://chaicode.com/*",
+        "https://www.chaicode.com/*"
+      ],
+      "js": [
+        "unlock-seek.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://courses.chaicode.com/*",
+        "https://*.chaicode.com/*",
+        "https://chaicode.com/*",
+        "https://www.chaicode.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "overlay.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

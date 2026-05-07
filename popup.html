@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chaicode Player Boost</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="popup-header">
+        <span class="popup-icon-frame">
+          <img src="icon-128.png" alt="" class="popup-icon">
+        </span>
+        <div class="popup-title-block">
+          <h1>Chaicode Player Boost</h1>
+          <p id="mode-summary">Custom player enabled</p>
+        </div>
+      </header>
+
+      <section class="mode-panel" aria-label="Player mode">
+        <div id="mode-card" class="mode-card" data-mode="custom">
+          <div class="mode-row">
+            <div class="mode-info">
+              <span id="mode-title" class="mode-title">Custom player</span>
+              <span id="mode-copy" class="mode-copy">Boost controls, shortcuts, speed, quality, fullscreen.</span>
+            </div>
+            <div id="mode-toggle" class="mode-segment" role="radiogroup" aria-label="Player mode" data-mode="custom">
+              <span class="mode-segment-thumb" aria-hidden="true"></span>
+              <button class="mode-segment-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-player-mode="normal">Normal</button>
+              <button class="mode-segment-option" type="button" role="radio" aria-checked="true" tabindex="0" data-player-mode="custom">Custom</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shortcut-panel" aria-label="Shortcuts">
+        <h2>Shortcuts</h2>
+        <div class="shortcut-row">
+          <span>Play / pause</span>
+          <span class="shortcut-keys"><kbd>Space</kbd><span>/</span><kbd>K</kbd></span>
+        </div>
+        <div class="shortcut-row">
+          <span>Skip</span>
+          <span class="shortcut-keys"><kbd>&larr;</kbd><span>/</span><kbd>&rarr;</kbd></span>
+        </div>
+        <div class="shortcut-row">
+          <span>Speed</span>
+          <span class="shortcut-keys"><kbd>[</kbd><span>/</span><kbd>]</kbd></span>
+        </div>
+        <div class="shortcut-row">
+          <span>Mute</span>
+          <span class="shortcut-keys"><kbd>M</kbd></span>
+        </div>
+        <div class="shortcut-row">
+          <span>Fullscreen</span>
+          <span class="shortcut-keys"><kbd>F</kbd></span>
+        </div>
+        <div class="shortcut-row">
+          <span>Hide / show custom</span>
+          <span class="shortcut-keys"><kbd>H</kbd></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

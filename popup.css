@@ -121,6 +121,7 @@ h2 {
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
+  animation: cb-status-pulse 1.7s ease-in-out infinite;
 }
 
 .status-indicator:disabled {
@@ -137,6 +138,19 @@ body[data-site="unsupported"] .status-indicator:hover {
 
 body[data-site="unsupported"] .status-indicator::before {
   background: #6f7b8d;
+}
+
+@keyframes cb-status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 44%, transparent);
+    opacity: 0.82;
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+    opacity: 1;
+  }
 }
 
 .mode-panel,

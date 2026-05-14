@@ -9,29 +9,26 @@
   <body>
     <main class="popup-shell">
       <header class="popup-header">
-        <span class="popup-icon-frame">
-          <img src="icon-128.png" alt="" class="popup-icon">
-        </span>
-        <div class="popup-title-block">
+        <img src="icon-128.png" alt="" class="popup-icon">
+        <div class="popup-heading">
           <h1>Chaicode Player Boost</h1>
-          <p id="mode-summary">Custom player enabled</p>
+          <button id="mode-summary" class="status-indicator" type="button">Custom mode selected</button>
         </div>
       </header>
 
-      <section class="mode-panel" aria-label="Player mode">
-        <div id="mode-card" class="mode-card" data-mode="custom">
-          <div class="mode-row">
-            <div class="mode-info">
-              <span id="mode-title" class="mode-title">Custom player</span>
-              <span id="mode-copy" class="mode-copy">Boost controls, shortcuts, speed, quality, fullscreen.</span>
-            </div>
-            <div id="mode-toggle" class="mode-segment" role="radiogroup" aria-label="Player mode" data-mode="custom">
-              <span class="mode-segment-thumb" aria-hidden="true"></span>
-              <button class="mode-segment-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-player-mode="normal">Normal</button>
-              <button class="mode-segment-option" type="button" role="radio" aria-checked="true" tabindex="0" data-player-mode="custom">Custom</button>
-            </div>
+      <section id="mode-card" class="mode-panel" data-mode="custom" aria-label="Player mode">
+        <div class="mode-header">
+          <div>
+            <span class="section-label">Mode</span>
+            <span id="mode-title" class="mode-title">Custom player</span>
+          </div>
+          <div id="mode-toggle" class="mode-segment" role="radiogroup" aria-label="Player mode" data-mode="custom">
+            <span class="mode-segment-thumb" aria-hidden="true"></span>
+            <button class="mode-segment-option" type="button" role="radio" aria-checked="false" tabindex="-1" data-player-mode="normal">Normal</button>
+            <button class="mode-segment-option" type="button" role="radio" aria-checked="true" tabindex="0" data-player-mode="custom">Custom</button>
           </div>
         </div>
+        <p id="mode-copy" class="mode-copy">Boost controls, shortcuts, speed, quality, fullscreen.</p>
       </section>
 
       <section class="shortcut-panel" aria-label="Shortcuts">
@@ -57,7 +54,7 @@
           <span class="shortcut-keys"><kbd>F</kbd></span>
         </div>
         <div class="shortcut-row">
-          <span>Hide / show custom</span>
+          <span>Hide custom</span>
           <span class="shortcut-keys"><kbd>H</kbd></span>
         </div>
       </section>

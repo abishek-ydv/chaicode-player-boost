@@ -189,6 +189,14 @@ p:has(> [id^="watermark-slide-"]) {
   visibility: hidden !important;
 }
 
+.next-button,
+.prev-button {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 #cb-player-controls {
   --cb-accent: #f59e0b;
   --cb-track: rgba(255, 255, 255, 0.26);

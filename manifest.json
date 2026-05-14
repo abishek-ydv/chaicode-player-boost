@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Chaicode Player Boost",
-  "version": "1.8.10",
-  "description": "Choose normal or custom Chaicode player controls, unlock seeking, native quality/fullscreen delegation, shortcuts, and hidden watermarks.",
+  "version": "1.8.18",
+  "description": "Enhances Chaicode course videos with custom controls and seeking. Active only on courses.chaicode.com.",
   "permissions": [
+    "activeTab",
     "storage"
   ],
   "action": {
@@ -19,10 +20,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://courses.chaicode.com/*",
-        "https://*.chaicode.com/*",
-        "https://chaicode.com/*",
-        "https://www.chaicode.com/*"
+        "https://courses.chaicode.com/*"
       ],
       "js": [
         "unlock-seek.js"
@@ -33,10 +31,7 @@
     },
     {
       "matches": [
-        "https://courses.chaicode.com/*",
-        "https://*.chaicode.com/*",
-        "https://chaicode.com/*",
-        "https://www.chaicode.com/*"
+        "https://courses.chaicode.com/*"
       ],
       "js": [
         "content.js"

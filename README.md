@@ -1,34 +1,37 @@
-# ☕ Chaicode Player Boost
+# Chaicode Player Boost
 
-A powerful browser extension specifically engineered for the Chaicode learning platform to enhance the video playback and learning experience.
+A focused Chrome extension for improving video playback on the Chaicode course player.
 
-## 🧑‍💻 For Users
+## Site Access
 
-### 🌟 Features
-- **Unlocked Seeking:** Bypasses native restrictions to allow free scrubbing through video timelines.
-- **Custom Player Controls:** Toggles between standard and custom-built interface elements.
-- **Native Delegation:** Grants you native control over video quality and fullscreen functionalities.
-- **Keyboard Shortcuts:** Adds custom hotkeys for a smoother playback experience.
-- **Decluttering:** Actively removes intrusive, hidden watermarks for a distraction-free view.
+Chaicode Player Boost is intentionally active only on:
 
-### 🚀 Installation
+`https://courses.chaicode.com/*`
+
+The toolbar popup remains accessible on other websites, but mode changes are disabled there with a clear warning. The extension does not inject scripts into unrelated sites or other Chaicode domains.
+
+## Features
+
+- Unlocked seeking and draggable seek bar support.
+- Optional custom player controls.
+- Normal player mode with seek-bar assist only.
+- Native quality and fullscreen delegation.
+- Keyboard shortcuts for playback, seeking, speed, mute, fullscreen, and hiding custom controls.
+- Watermark hiding for a cleaner lecture view.
+
+## Installation
+
 1. Open Chrome and go to `chrome://extensions/`.
-2. Toggle **Developer mode** on (top right).
-3. Click **Load unpacked** and select this directory.
+2. Turn on **Developer mode**.
+3. Click **Load unpacked**.
+4. Select this extension directory.
 
----
+## Development
 
-## 🛠️ For Developers
+- `manifest.json`: Extension metadata, permissions, and site matching.
+- `unlock-seek.js`: Runs in the main world at `document_start` to unlock seeking behavior.
+- `content.js`: Injects and manages the player controls.
+- `overlay.css`: Styles the injected player controls.
+- `popup.html`, `popup.css`, `popup.js`: Extension popup and mode selection.
 
-### 🏗️ Architecture & Tech Stack
-- **Environment:** Chrome Extension Manifest V3
-- **Languages:** Vanilla HTML, CSS, JavaScript
-- **Core Components:**
-  - `content.js`: Main logic injected into Chaicode pages to override player UI.
-  - `unlock-seek.js`: Injected into the `MAIN` world at `document_start` to intercept and bypass player restrictions.
-  - `overlay.css`: Injects custom styles for the new player controls.
-  - `popup.html`/`popup.js`: Manages user settings via `chrome.storage`.
-
-### ⚙️ Development Setup
-- The extension heavily relies on `MAIN` world scripting to bypass React/player state. Ensure changes to `unlock-seek.js` do not break the native player's event listeners.
-- Reload the extension in `chrome://extensions/` and hard-refresh the Chaicode page to test DOM overrides.
+After changes, reload the extension in `chrome://extensions/` and refresh the Chaicode course page.

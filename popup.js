@@ -1,5 +1,6 @@
 const MODE_KEY = "cb-player-boost-player-mode";
 const DEFAULT_MODE = "custom";
+const LEARN_URL = "https://courses.chaicode.com/learn";
 const summary = document.getElementById("mode-summary");
 const toggle = document.getElementById("mode-toggle");
 const modeCard = document.getElementById("mode-card");
@@ -36,9 +37,9 @@ function render(mode) {
     : "Chaicode controls with draggable seek bar only.";
   summary.textContent = isCoursePage
     ? isCustom ? "Custom mode selected" : "Normal mode selected"
-    : "Open courses.chaicode.com";
+    : "Open courses.chaicode.com/learn";
   summary.disabled = isCoursePage;
-  summary.setAttribute("aria-label", isCoursePage ? summary.textContent : "Open courses.chaicode.com");
+  summary.setAttribute("aria-label", isCoursePage ? summary.textContent : "Open courses.chaicode.com/learn");
 }
 
 function saveMode(mode) {
@@ -87,7 +88,7 @@ toggle.addEventListener("click", (event) => {
 
 summary.addEventListener("click", () => {
   if (isCoursePage) return;
-  chrome.tabs?.create?.({ url: "https://courses.chaicode.com/" });
+  chrome.tabs?.create?.({ url: LEARN_URL });
 });
 
 toggle.addEventListener("keydown", (event) => {

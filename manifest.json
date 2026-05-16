@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Chaicode Player Boost",
-  "version": "1.8.18",
+  "version": "1.8.20",
   "description": "Enhances Chaicode course videos with custom controls and seeking. Active only on courses.chaicode.com.",
   "permissions": [
     "activeTab",
